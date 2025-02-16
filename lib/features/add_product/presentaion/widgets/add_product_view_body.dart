@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:e_commerce_dashboard/features/add_product/domain/entites/add_product_input_entity.dart';
 import 'package:e_commerce_dashboard/features/add_product/presentaion/widgets/image_field.dart';
 import 'package:flutter/material.dart';
 
@@ -82,12 +83,15 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   if (productImage != null) {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      print(productName);
-                      print(productPrice);
-                      print(productCode);
-                      print(productDescription);
-                      print(isFeatured);
-                      print(productImage);
+                      AddProductInputEntity addProductInputEntity =
+                          AddProductInputEntity(
+                        name: productName,
+                        code: productCode,
+                        description: productDescription,
+                        price: productPrice,
+                        image: productImage!,
+                        isFeatured: isFeatured,
+                      );
                     } else {
                       setState(() {
                         autovalidateMode = AutovalidateMode.always;
