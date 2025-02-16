@@ -21,9 +21,9 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images
+    - assets/images/
 flutter_assets:
-  assets_path: assets/images/ # Path to your assets directory
+  assets_path: assets/images # Path to your assets directory
   output_path: lib/core/utils # Where the generated Dart file will be saved
   filename: app_images.dart # Name of the generated Dart file
   field_prefix: # Prefix for the generated fields (e.g., `correctLogo` for an image named `logo.png`)
