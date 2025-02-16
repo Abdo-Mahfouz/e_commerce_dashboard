@@ -1,6 +1,8 @@
+import 'package:e_commerce_dashboard/features/add_product/presentaion/widgets/image_field.dart';
 import 'package:flutter/material.dart';
 
-import 'custom_text_form_field.dart';
+import '../../../../core/widgets/custom_text_form_field.dart';
+import 'is_item_featurd.dart';
 
 class AddProductViewBody extends StatefulWidget {
   const AddProductViewBody({super.key});
@@ -12,34 +14,50 @@ class AddProductViewBody extends StatefulWidget {
 class _AddProductViewBodyState extends State<AddProductViewBody> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  bool isFeatured = false;
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Form(
-        key: formKey,
-        autovalidateMode: autovalidateMode,
-        child: Column(
-          children: [
-            CustomTextFormField(
-              labelText: 'Product Name',
-              onSaved: (value) {},
-            ),
-            CustomTextFormField(
-              labelText: 'Product Description',
-              onSaved: (value) {},
-            ),
-            CustomTextFormField(
-              labelText: 'Product Price',
-              keyboardType: TextInputType.number,
-              onSaved: (value) {},
-            ),
-            CustomTextFormField(
-              labelText: 'Product Quantity',
-              keyboardType: TextInputType.number,
-              onSaved: (value) {},
-            ),
-          ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
+      child: SingleChildScrollView(
+        child: Form(
+          key: formKey,
+          autovalidateMode: autovalidateMode,
+          child: Column(
+            spacing: 16.0,
+            children: [
+              CustomTextFormField(
+                keyboardType: TextInputType.text,
+                labelText: 'Product Name',
+                onSaved: (value) {},
+              ),
+              CustomTextFormField(
+                keyboardType: TextInputType.number,
+                labelText: 'Product Price',
+                onSaved: (value) {},
+              ),
+              CustomTextFormField(
+                keyboardType: TextInputType.number,
+                labelText: 'Product Code',
+                onSaved: (value) {},
+              ),
+              CustomTextFormField(
+                keyboardType: TextInputType.text,
+                labelText: 'Product Description',
+                maxLines: 5,
+                onSaved: (value) {},
+              ),
+              ImageField(
+                onFileChanged: (image) {},
+              ),
+              IsItemFeaturedWidget(
+                onChanged: (value) {
+                  isFeatured = value;
+                },
+              )
+            ],
+          ),
         ),
       ),
     );

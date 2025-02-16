@@ -1,6 +1,8 @@
 import 'package:e_commerce_dashboard/features/add_product/presentaion/widgets/add_product_view_body.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/app_styles/app_text_style.dart';
+
 class AddProductView extends StatelessWidget {
   const AddProductView({super.key});
   static const String routeName = 'addProductView';
@@ -8,7 +10,11 @@ class AddProductView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Add New Product'),
+          title: Text(
+            'Add New Product',
+            style: TextStyles.bold16.copyWith(color: Colors.black),
+          ),
+          centerTitle: true,
         ),
         body: AddProductViewBody());
   }
