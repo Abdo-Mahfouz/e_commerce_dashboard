@@ -43,4 +43,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-/android/app/src/main/java/com/example/e_commerce_dashboard/constants.dart
+lib/constants.dart
