@@ -1,8 +1,10 @@
 import 'dart:io';
 
 import 'package:e_commerce_dashboard/features/add_product/domain/entites/add_product_input_entity.dart';
+import 'package:e_commerce_dashboard/features/add_product/presentaion/manager/cubit/add_product_cubit.dart';
 import 'package:e_commerce_dashboard/features/add_product/presentaion/widgets/image_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
@@ -92,6 +94,9 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                         image: productImage!,
                         isFeatured: isFeatured,
                       );
+                      context
+                          .read<AddProductCubit>()
+                          .addProduct(addProductInputEntity);
                     } else {
                       setState(() {
                         autovalidateMode = AutovalidateMode.always;
