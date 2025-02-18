@@ -6,19 +6,22 @@ import 'package:e_commerce_dashboard/core/services/database_service/database_ser
 import 'package:e_commerce_dashboard/core/services/database_service/firestore_service.dart';
 import 'package:e_commerce_dashboard/core/services/storage_service/fire_storage_service.dart';
 import 'package:e_commerce_dashboard/core/services/storage_service/storage_service.dart';
+import 'package:e_commerce_dashboard/core/services/storage_service/supabase_storage_service.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
 
 void setupDI() {
   getIt.registerLazySingleton<FirestoreService>(() => FirestoreService());
+  getIt.registerLazySingleton<SupabaseStorageService>(
+      () => SupabaseStorageService());
   getIt.registerLazySingleton<FireStorageService>(() => FireStorageService());
-  getIt.registerLazySingleton<StorageService>(() => FireStorageService());
+  getIt.registerLazySingleton<StorageService>(() => SupabaseStorageService());
   getIt.registerLazySingleton<DataBaseService>(() => FirestoreService());
 
   getIt.registerLazySingleton<ImagesRepo>(
     () => ImagesRepoImpl(
-      storageService: getIt<FireStorageService>(),
+      storageService: getIt<SupabaseStorageService>(),
     ),
   );
 

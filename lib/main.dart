@@ -1,3 +1,4 @@
+import 'package:e_commerce_dashboard/core/services/storage_service/supabase_storage_service.dart';
 import 'package:e_commerce_dashboard/features/dashboard/presentation/views/dash_board_home_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = CustomBlocObserver();
-
+  await SupabaseStorageService.initSupaBase();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

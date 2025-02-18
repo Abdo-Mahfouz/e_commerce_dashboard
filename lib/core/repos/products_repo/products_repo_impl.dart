@@ -16,7 +16,8 @@ class ProductsRepoImpl implements ProductsRepo {
     try {
       dataBaseService.addData(
           path: BackendEndpoints.productsPath,
-          data: AddProductInputModel.fromEntity(addProductInputEntity).toMap());
+          data:
+              AddProductInputModel.fromEntity(addProductInputEntity).toJson());
       return const Right(null);
     } catch (e) {
       return left(ServerFailure('Failed to add product'));
