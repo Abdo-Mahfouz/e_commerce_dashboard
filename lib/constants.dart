@@ -1,3 +1,0 @@
-const ksupaBaseurl = 'https://ghoblajaeovhfwvuqmcb.supabase.co';
-const kSupaBaseanonKey =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdob2JsYWphZW92aGZ3dnVxbWNiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczOTg5MzUzNCwiZXhwIjoyMDU1NDY5NTM0fQ.P2kaOTQKoArG8UdwWvznwD-vbn5J0f257dnIRKkdra0';
