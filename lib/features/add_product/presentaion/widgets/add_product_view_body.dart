@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:e_commerce_dashboard/features/add_product/domain/entites/add_product_input_entity.dart';
+import 'package:e_commerce_dashboard/features/add_product/domain/entites/product_entity.dart';
 import 'package:e_commerce_dashboard/features/add_product/presentaion/manager/cubit/add_product_cubit.dart';
 import 'package:e_commerce_dashboard/features/add_product/presentaion/widgets/image_field.dart';
 import 'package:flutter/material.dart';
@@ -121,8 +121,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   if (productImage != null) {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      AddProductInputEntity addProductInputEntity =
-                          AddProductInputEntity(
+                      ProductEntity addProductInputEntity = ProductEntity(
                         name: productName,
                         code: productCode,
                         description: productDescription,
